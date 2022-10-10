@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="logo"><img src="../static/logo.png">Student&nbsp;College Information</div>
+		<nav>  
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a>
+				<li><a href="{{url_for('contact')}}">contact</a>
+				<li><a href="{{url_for('about')}}">about</a>
+				<li><a href="{{url_for('alluser')}}">All User</a>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<strong>Student Data</strong>
+	</section>
+	<section>
+	<form method="POST" action="{{url_for('create')}}">
+		<label for="uname">student_name</label>
+		 <input type="text" name="student_name" id="uname"/><br><br>
+		 
+	    <label for="pwd">roll_no</label>
+		<input type="number" name="roll_no" id="pwd"/><br><br>
+		
+		 <label for="total_marks">total_marks</label>
+		 <input type="number" name="total_marks" id="total_marks"/><br><br>
+		 
+		 <input type="submit" name="adduser"  value="Add_user"/>
+		 
+		 
+		</form>
+	
+		</section>
+			
+	<div id="main">
+		<section id="page">
+			<main>
+			<head>
+		      <style>
+			  table,th,td{
+			  border:1px solid black;
+			  }</style>
+			  </head>
+			<table border="1" align="right" height="300"><br>
+			<tr>
+				<th>student_name</th>
+				<th>roll_no</th>
+				<th>total_marks</th>
+				<th colspan="2">Action</th>
+			</tr>
+			{% for row in userdata %}
+			<tr align="center">
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td><a href="{{url_for('edit',id=row[0])}}">Edit</a></td>
+				<td><a href="{{url_for('delete',id=row[0])}}">Delete</a></td>
+			</tr>
+
+
+			
+			
+			
+			
+			
+			{% endfor %}
+			</table>
+		</main>
+	</section>
+	</div>
+	
+	<section id="pageContent">
+		<main role="main">
+			<article><br><br><br>
+				<h2>STUDENT PROGRESS DATA</h2><br>
+				<p>Electronic and Telecomunication</p><br>
+				<p>Computer of Engineering</p><br>
+				<p>Information Technology</p><br>
+			</article>
+			<article>
+				<h2>TOTAL MARKS WISE GRADE</h2><br>
+				<p>80 Above Marks of Grade-A</p><br>
+				<p>60 Above Marks of Grade-B</p><br>
+				<p>40 Above Marks of Grade-C</p><br>
+				<p>40 Below Marks of Fail</p><br>
+			</article>
+		</main>
+	</section>
+	<footer><br><br>
+		<p>&copy; You can copy, edit and publish this template but please leave a link to our website | <a href="https://html5-templates.com/" target="_blank" rel="nofollow">Student Information</a></p>
+		<address>
+			Contact: <a href="mailto:me@example.com">Mail me</a>
+		</address>
+	</footer>
+
+
+</body>
+
+</html>

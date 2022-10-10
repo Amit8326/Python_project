@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="logo"><img src="../static/logo.png">Student&nbsp;College Information</div>
+		<nav>  
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a>
+				<li><a href="{{url_for('contact')}}">contact</a>
+				<li><a href="{{url_for('about')}}">about</a>
+				<li><a href="{{url_for('alluser')}}">All User</a>
+				</ul>
+		</nav>
+	</header>
+	<section>
+		<strong>Contact Information</strong>
+	</section>
+	<section id="pageContent">
+		<main role="main">
+		{{telephone}}<br><br><br>
+			
+		</main>
+	</section>
+	<section id="pageContent">
+		<main role="main">
+			<article>
+				<h2>DEPARTMENT WISE CONTACT</h2><br>
+				<p>Electronic and Telecomunication</p><br>
+				<p>9023547857</p><br>
+			</article>
+			<article>
+				<h2>Computer Engineering</h2>
+				<p>8953368205</p>
+			</article>
+			<article>
+				<h2>Information Technology</h2>
+				<p>75290748287</p>
+			</article>
+		</main>
+	</section>
+	<footer>
+		<p>&copy; You can copy, edit and publish this template but please leave a link to our website | <a href="https://html5-templates.com/" target="_blank" rel="nofollow">Student Information</a></p>
+		<address>
+			Contact: <a href="mailto:me@example.com">Mail me</a>
+		</address>
+	</footer>
+
+
+</body>
+
+</html>
